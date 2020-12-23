@@ -62,12 +62,12 @@ client.on('message', async message => {
     const serverId = message.guild.id;
     let serverQ = queue.get(serverId);
 
-    try{
+    try{ 
         const broadcast = client.voice.createBroadcast();
         var channelId=message.member.voice.channelID;
         var channel=client.channels.cache.get(channelId);
         channel.join().then(connection => {
-            broadcast.play(getVoiceStream("test 123"));
+            broadcast.play(getVoiceStream(args));
             const dispatcher=connection.play(broadcast);
         });
     }catch(error){
