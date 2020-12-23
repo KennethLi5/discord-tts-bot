@@ -22,7 +22,7 @@ client.once('disconnect', () => {
 });
 
 function getVoiceStream(text, lang="en-GB", speed=1){
-    const stream=new Stream.Transform();
+    const stream=new Stream.PassThrough();
     downloadFromInfoCallback(text,lang,speed,stream);
     return stream;
 }
@@ -31,6 +31,8 @@ function downloadFromInfoCallback(text, lang, speed, stream){
     console.log(text);
     const url = googleTTS.getAudioUrl(text, {lang: lang})
     
+    console.log(url);
+
     const request = https.get(url, function(response,err) {
         response.pipe(stream);
     });
