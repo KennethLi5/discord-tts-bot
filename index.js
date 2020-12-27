@@ -30,6 +30,14 @@ client.once('disconnect', () => {
     console.log('Disconnect!');
 });
 
+function synthesizeSpeech(params, con, broadcast) {
+    Polly.synthesizeSpeech(params, function(err, data) {
+        var bufferStream = new Stream.PassThrough()
+        bufferStream.end(data.AudioStream)                
+        broadcast.play(bufferStream)
+        const dispatcher=con.play(broadcast);
+    })
+}
 
 client.on('message', async message => {
     if (message.author.bot) 
@@ -50,15 +58,10 @@ client.on('message', async message => {
             Text: args,
             VoiceId: 'Brian',            
         }
+        console.log(channelId);
 
         channel.join().then(connection => {
-            console.log(args);
-            Polly.synthesizeSpeech(params, function(err, data) {
-                var bufferStream = new Stream.PassThrough()
-                bufferStream.end(data.AudioStream)                
-                broadcast.play(bufferStream)
-                const dispatcher=connection.play(broadcast);
-            })
+            synthesizeSpeech(params, connection, broadcast)
         });
     }catch(error){
         console.error(error);
