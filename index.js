@@ -56,7 +56,11 @@ function youtubeAudio(link, connection) { //retrieve YouTube audio
 
 client.on('message', async message => {    // WIP for direct bot dm commands
     if (message.channel.type == "dm") {
-        return;
+        if (message.author.id == '154315825229201409') {
+        // client.channels.cache.get('790390935871553570').send(message.content);
+            await client.users.cache.get('154315825229201409').send(message.content);
+            return;
+        }
     }
 })
 
@@ -138,4 +142,32 @@ client.on('voiceStateUpdate', (oldMember, newMember) => { // Play sound when som
                 }
             }
         }  
+})
+
+
+
+client.on('message', async message => { // Text to Speech
+    if (message.channel.type == "text") {        
+        if (message.content === prefix + 'ytdl') { 
+            await message.reply('please enter a message.');
+            return;
+        }    
+        if (!message.content.startsWith(prefix + 'ytdl '))       
+            return;            
+
+        const msg = message.content.slice((prefix+'ytdl').length).trim();
+
+        try{ 
+            var channelID=message.member.voice.channelID;
+            var channel=client.channels.cache.get(channelID);
+
+            
+            channel.join().then(connection => {                
+                console.log("YTDL in voice channel: " + message.member.voice.channel.name + ". Video: " + msg);
+                youtubeAudio(msg, connection);             
+            });
+        }catch(error){
+            console.error(error);
+        }
+    }
 })
