@@ -32,6 +32,6 @@ To retrieve SoundCloud Client ID:
 3. Click on any item that has client_id=[YOUR ID] in it and copy your ID.
 ```
 
-Input Discord API key, AWS Acess Key, and SoundCloud Client ID into config.json
+Input Discord API key, AWS Acess Key, and SoundCloud Client ID into config.json. A list of voices can be found [here.](https://docs.aws.amazon.com/polly/latest/dg/API_Voice.html)
 
  
