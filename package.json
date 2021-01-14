@@ -1,12 +1,12 @@
 {
-  "name": "test-bot",
+  "name": "Discord-TTS-Bot",
   "version": "1.0.0",
-  "description": "testing features for my discord bot",
+  "description": "Discord Bot with TTS through Amazon Polly",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brandon Wetzel",
+  "author": "Kenneth Li",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.817.0",
@@ -18,6 +18,7 @@
     "https": "^1.0.0",
     "lodash": "^4.17.20",
     "opusscript": "0.0.7",
+    "soundcloud-downloader": "^0.2.2",
     "ytdl-core": "^4.2.1"
   }
 }
