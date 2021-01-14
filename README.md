@@ -9,13 +9,10 @@ Originally done as a collab project with just the TTS function, however I wanted
 - .join - Joins the voice channel of user
 - .leave - Leave the voice channel of the server
 - .tts - Translates user input text into speech through Amazon Polly. Plays in voice channel.
+- .ytdl - Fetches audio of a YouTube link for playback in voice channel.
 - Automatically playing an audio file when a user joins the voice channel.
 
 Note: The current setting is to play a SoundCloud link when a user joins. However, this can be changed easily to play a TTS message or a YouTube link.
-
-## Work in progress
-
-- .yt - Fetches audio of a YouTube link for playback in voice channel.
 
 ## Requirements
 
