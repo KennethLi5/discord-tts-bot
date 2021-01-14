@@ -1,0 +1,9 @@
+{
+    "prefix": ".",
+    "discToken": " ",
+    "awsKey": " ",
+    "awsSecretKey": " ",
+    "awsVoice" : " ",
+    "scClientID" : " ",
+    "scLink" : " "
+}
