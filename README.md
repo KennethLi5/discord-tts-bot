@@ -22,6 +22,19 @@ Note: The current setting is to play a SoundCloud link when a user joins. Howeve
 - SoundCloud Client ID 
 
 ```bash
+Installing modules
+$ npm install discord.js
+
+$ npm install stream
+
+$ npm install aws-sdk
+
+$ npm install ytdl
+
+$ npm install scdl
+```
+
+```bash
 To retrieve SoundCloud Client ID:
 
 1. Go to any downloadable track on SoundCloud
